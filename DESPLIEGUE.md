@@ -4,42 +4,36 @@ Web estática pura: HTML, CSS y una imagen. Sin build, sin dependencias, sin Nod
 
 ---
 
+## Estado actual
+
+**El repositorio ya está inicializado y con el primer commit hecho** en esta misma carpeta: rama `main`, 25 archivos, historial limpio. Solo falta conectarlo con GitHub y empujarlo.
+
 ## Primera vez
 
-**1. Crea el repositorio**
+**1. Conecta con tu repositorio y sube**
 
-En GitHub, nuevo repositorio público llamado `caminosconfuturo` (o el nombre que prefieras). Sin README, sin .gitignore, sin licencia — vacío.
-
-**2. Sube el contenido de esta carpeta**
-
-Todo lo que hay dentro de `prototipo/` va a la **raíz** del repositorio, no dentro de una subcarpeta. `index.html` tiene que quedar en la raíz.
-
-Por terminal:
+Desde una terminal, dentro de esta carpeta:
 
 ```bash
-cd ruta/a/prototipo
-git init
-git add -A
-git commit -m "Borrador inicial de la web"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/caminosconfuturo.git
 git push -u origin main
 ```
 
-O arrastrando los archivos en la interfaz web de GitHub (*Add file → Upload files*). Si lo haces así, sube también los archivos ocultos: `.nojekyll` es importante.
+El remoto ya está configurado a `caminosconfuturo/caminosconfuturo.github.io`. Git te pedirá autenticarte: en la contraseña **no vale la de tu cuenta**, hay que usar un *personal access token* (GitHub → Settings → Developer settings → Personal access tokens). Si prefieres evitar eso, **GitHub Desktop** hace login con el navegador y es más cómodo: *File → Add local repository* → eliges esta carpeta → *Publish repository*.
 
-**3. Activa Pages**
+> Si el repositorio que creaste tiene ya un README, el push será rechazado. Se arregla con:
+> `git pull --rebase origin main` y vuelves a hacer `git push`.
 
-*Settings → Pages → Build and deployment → Source: **Deploy from a branch***
-Branch: `main`, carpeta `/ (root)`. Guardar.
+**2. Activa Pages**
+
+Al llamarse el repositorio `caminosconfuturo.github.io`, GitHub lo reconoce como **sitio de usuario** y suele activar Pages solo. Compruébalo en *Settings → Pages*: Source debe estar en **Deploy from a branch**, branch `main`, carpeta `/ (root)`.
 
 En 1–2 minutos estará en:
 
 ```
-https://TU-USUARIO.github.io/caminosconfuturo/
+https://caminosconfuturo.github.io/
 ```
 
-Ese es el enlace que le pasas a Sira. Funciona en móvil, que es donde lo va a abrir.
+Sin subcarpeta, directamente en la raíz. Ese es el enlace que le pasas a Sira — funciona en móvil, que es donde lo va a abrir.
 
 ---
 
@@ -91,7 +85,9 @@ Cuando la web sea la definitiva y tenga dominio propio:
 2. Cambiar `robots.txt` a `Allow: /`.
 3. Devolver el `<link rel="canonical">` a cada página con el dominio real.
 4. Borrar el bloque `.borrador` de `styles.css` y la función `bannerBorrador()` de `main.js` (están marcados con un comentario).
-5. Si usáis dominio propio: crear un archivo `CNAME` en la raíz con `caminosconfuturo.org` dentro y apuntar los DNS a GitHub Pages.
+5. Si usáis dominio propio: crear un archivo `CNAME` en la raíz con `caminosconfuturo.org` dentro y apuntar los DNS a GitHub Pages. Como el repositorio es un sitio de usuario, el dominio sustituirá a `caminosconfuturo.github.io` sin más cambios en el código.
+
+> **Ojo con este repositorio en concreto.** Al servir en la raíz de `caminosconfuturo.github.io`, el borrador queda en una URL que parece definitiva y que Google puede descubrir con más facilidad que una subcarpeta. El `noindex` de las 12 páginas y el `robots.txt` (que solo tiene efecto en la raíz del dominio, y aquí lo está) son los que lo impiden. No los quites hasta que el contenido sea el bueno.
 
 ---
 
