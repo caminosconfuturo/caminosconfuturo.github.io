@@ -543,3 +543,30 @@ p  { margin:0 0 1.1em; }
   *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
   .reveal { opacity:1; transform:none; }
 }
+/* ==========================================================================
+   PARCHE — arreglos de la revisión con navegador
+   Va al final a propósito: en CSS, a igual peso, gana la última regla.
+   ========================================================================== */
+
+/* 1. Scroll horizontal en las 12 páginas: el panel del menú móvil, aunque
+      oculto, seguía ocupando el ancho de la pantalla. */
+html { overflow-x: hidden; }
+.menu-movil[hidden] { display: none; }
+
+/* 2. El contenido ya no depende del JavaScript para ser visible. */
+.reveal { opacity: 1; transform: none; }
+
+/* 3. En móvil, el titular y los botones antes que la imagen. */
+@media (max-width: 1024px) { .hero__media { order: 0; } }
+
+/* 4. Aviso de borrador más compacto en móvil. */
+@media (max-width: 720px) {
+  .borrador { font-size: .78rem; line-height: 1.4; }
+  .borrador__inner { padding: 8px 0; gap: 8px; }
+  .borrador__inner > svg { display: none; }
+}
+
+/* 5. El aviso de cookies ya no tapa el botón principal del hero. */
+.cookies { max-width: 340px; right: auto; padding: 14px 16px; font-size: .82rem; }
+.cookies .btn { padding: 8px 15px; min-height: 38px; font-size: .82rem; }
+@media (max-width: 640px) { .cookies { left: 12px; right: 12px; max-width: none; bottom: 84px; } }
