@@ -59,8 +59,8 @@ function bannerBorrador() {
     <div class="contenedor">
       <div class="borrador__inner">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-        <p><b>Borrador de trabajo.</b> Así quedaría estructurada la web. Los textos son provisionales y los recuadros
-        <span class="muestra">PLACEHOLDER</span> señalan la información que falta por enviar (fotos, equipo, datos legales).</p>
+        <p><b>Borrador de trabajo.</b> Textos provisionales. Los recuadros
+        <span class="muestra">PLACEHOLDER</span> marcan la información que falta.</p>
         <button class="borrador__cerrar" type="button" aria-label="Ocultar este aviso">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
