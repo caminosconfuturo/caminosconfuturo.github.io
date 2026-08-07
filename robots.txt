@@ -1,4 +1,7 @@
-# Borrador en revisión — no debe indexarse.
-# Al pasar a producción: sustituir por "Allow: /" y quitar el noindex de las páginas.
+# Borrador en revisión — NO debe aparecer en buscadores.
+# El rastreo se permite a propósito: lo que mantiene el sitio fuera de
+# Google es la etiqueta noindex de las 12 páginas, y para obedecerla el
+# buscador necesita poder entrar y leerla.
+
 User-agent: *
-Disallow: /
+Allow: /
