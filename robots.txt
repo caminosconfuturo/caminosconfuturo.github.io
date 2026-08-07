@@ -1,0 +1,4 @@
+# Borrador en revisión — no debe indexarse.
+# Al pasar a producción: sustituir por "Allow: /" y quitar el noindex de las páginas.
+User-agent: *
+Disallow: /
