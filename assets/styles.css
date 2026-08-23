@@ -442,6 +442,32 @@ p  { margin:0 0 1.1em; }
 }
 .area-fila .lista-servicios a:hover { background:var(--area-100); color:var(--area-700); }
 
+/* --------------------------------------------------------- Bloque de orientación
+   "¿No sabéis qué servicio necesitáis?" — pensado para las familias que saben
+   que necesitan ayuda pero no qué servicio pedir. */
+.orienta {
+  display:grid; grid-template-columns:auto 1fr; gap:clamp(20px,3vw,32px); align-items:start;
+  background:var(--coral-100); border:1px solid var(--coral-300);
+  border-radius:var(--radio-l); padding:clamp(26px,3.5vw,40px);
+}
+.orienta__ico {
+  width:64px; height:64px; border-radius:20px; flex:none;
+  background:#fff; color:var(--coral-700); display:grid; place-items:center;
+}
+.orienta__ico svg { width:32px; height:32px; }
+.orienta h2 { font-size:clamp(1.35rem,2.4vw,1.85rem); margin-bottom:10px; }
+.orienta p { margin-bottom:22px; max-width:56ch; }
+
+/* Variante con más peso para el bloque de transición a la vida adulta */
+.destacado--principal { border:2px solid var(--lila-300); }
+.destacado--principal .cita-problema { font-size:1.12rem; }
+.destacado--principal .lista-check { margin:22px 0 28px; }
+
+@media (max-width:640px) {
+  .orienta { grid-template-columns:1fr; gap:18px; }
+  .orienta .btn { width:100%; }
+}
+
 /* --------------------------------------------------------- Franja CTA */
 .cta-band { background:var(--verde-700); color:#fff; }
 .cta-band .contenedor { padding-top:clamp(48px,6vw,80px); padding-bottom:clamp(48px,6vw,80px); }
