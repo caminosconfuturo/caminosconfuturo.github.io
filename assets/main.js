@@ -166,7 +166,7 @@ function pie() {
           <ul>
             <li><a href="${MAPS}" target="_blank" rel="noopener">Calle Águila Perdicera 5, bajo 2<br>41006 Sevilla</a></li>
             <li><a href="tel:${TEL_MOVIL}">645 788 999</a> · <a href="tel:${TEL_FIJO}">854 642 132</a></li>
-            <li><span class="etiqueta-ph" style="margin:0">PLACEHOLDER: EMAIL_PUBLICO</span></li>
+            <li><a href="mailto:caminosconfuturo@gmail.com">caminosconfuturo@gmail.com</a></li>
             <li>Lunes a viernes, 9:00–21:00</li>
           </ul>
         </div>
