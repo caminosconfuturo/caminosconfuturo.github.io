@@ -249,15 +249,31 @@ function interacciones() {
     cookies.querySelector('[data-cookies]').addEventListener('click', () => { cookies.hidden = true; });
   }
 
-  // Aparición al hacer scroll (una sola vez)
+  // Aparición suave al hacer scroll.
+  // El CSS solo oculta si el <html> tiene .anima, y esa clase la pone este JS:
+  // si el archivo no llega a ejecutarse, el contenido se ve igualmente.
   const nodos = document.querySelectorAll('.reveal');
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  const animar = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                 && 'IntersectionObserver' in window;
+
+  if (animar && nodos.length) {
+    document.documentElement.classList.add('anima');
+
+    // Lo que ya está en pantalla o por encima se marca visible de entrada:
+    // evita que quede invisible al entrar por un ancla o al saltar de golpe.
+    const yaVisto = n => n.getBoundingClientRect().top < window.innerHeight;
+    nodos.forEach(n => { if (yaVisto(n)) n.classList.add('visible'); });
+
     const io = new IntersectionObserver((entradas, obs) => {
       entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { rootMargin:'0px 0px -8% 0px', threshold:0.08 });
-    nodos.forEach(n => io.observe(n));
-  } else {
-    nodos.forEach(n => n.classList.add('visible'));
+    }, { rootMargin:'0px 0px -8% 0px', threshold:0.05 });
+    nodos.forEach(n => { if (!n.classList.contains('visible')) io.observe(n); });
+
+    // Red de seguridad: si un salto brusco deja algo atrás, se recupera.
+    let t; window.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => nodos.forEach(n => { if (yaVisto(n)) n.classList.add('visible'); }), 120);
+    }, { passive:true });
   }
 
   // Formulario de contacto (prototipo: no envía)
