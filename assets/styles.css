@@ -579,8 +579,14 @@ p  { margin:0 0 1.1em; }
 html { overflow-x: hidden; }
 .menu-movil[hidden] { display: none; }
 
-/* 2. El contenido ya no depende del JavaScript para ser visible. */
+/* 2. El contenido ya no depende del JavaScript para ser visible.
+      Visible por defecto; solo se oculta para animar la entrada SI el JS ha
+      arrancado y ha puesto .anima en el <html>. Si el JS falla, se ve todo. */
 .reveal { opacity: 1; transform: none; }
+html.anima .reveal:not(.visible) { opacity: 0; transform: translateY(14px); }
+@media (prefers-reduced-motion: reduce) {
+  html.anima .reveal:not(.visible) { opacity: 1; transform: none; }
+}
 
 /* 3. En móvil, el titular y los botones antes que la imagen. */
 @media (max-width: 1024px) { .hero__media { order: 0; } }
