@@ -16,7 +16,7 @@ const AREAS = [
   { slug:'intervencion-terapeutica',        nombre:'Intervención terapéutica',      clase:'area--terapeutica' },
   { slug:'orientacion-familiar',            nombre:'Orientación y apoyo familiar',  clase:'area--familiar' },
   { slug:'inclusion-y-desarrollo-personal', nombre:'Inclusión y desarrollo personal', clase:'area--inclusion' },
-  { slug:'otros-servicios',                 nombre:'Orientación, gestión y apoyo',  clase:'area--otros' }
+  { slug:'orientacion-laboral',                 nombre:'Orientación laboral y transición a la vida adulta',  clase:'area--otros' }
 ];
 
 /* ---------------------------------------------------------------- Iconos */
