@@ -602,3 +602,11 @@ html.anima .reveal:not(.visible) { opacity: 0; transform: translateY(14px); }
 .cookies { max-width: 340px; right: auto; padding: 14px 16px; font-size: .82rem; }
 .cookies .btn { padding: 8px 15px; min-height: 38px; font-size: .82rem; }
 @media (max-width: 640px) { .cookies { left: 12px; right: 12px; max-width: none; bottom: 84px; } }
+
+/* Arreglo: el backdrop-filter de la cabecera convertía a esta en el bloque
+   contenedor de sus hijos position:fixed, y el menú móvil quedaba encerrado
+   dentro de la franja de la cabecera (79 px) en vez de ocupar la pantalla.
+   Se desactiva el desenfoque justo donde vive ese menú. */
+@media (max-width:1024px) {
+  .cabecera { -webkit-backdrop-filter:none; backdrop-filter:none; }
+}
