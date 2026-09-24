@@ -613,7 +613,7 @@ html.anima .reveal:not(.visible) { opacity: 0; transform: translateY(14px); }
 
 /* Fotos reales: el marco deja de ser un hueco de borrador y pasa a contener la imagen */
 .marco-foto.con-foto, .hero__foto.con-foto {
-  padding:0; border:0; overflow:hidden; background:var(--borde);
+  display:block; padding:0; border:0; overflow:hidden; background:var(--borde);
 }
 .marco-foto.con-foto > img, .hero__foto.con-foto > img {
   width:100%; height:100%; object-fit:cover; display:block;
