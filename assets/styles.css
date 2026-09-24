@@ -623,13 +623,13 @@ html.anima .reveal:not(.visible) { opacity: 0; transform: translateY(14px); }
 
 /* Foto de apoyo dentro de una página de área: vertical a un lado, pie al otro */
 .foto-area {
-  display:grid; grid-template-columns:240px 1fr; gap:26px; align-items:center;
+  display:grid; grid-template-columns:300px 1fr; gap:32px; align-items:center;
   margin:40px 0 0; padding:22px; border-radius:var(--radio-l);
   background:var(--area-100); border:1px solid var(--area-300);
 }
 .foto-area .marco-foto.con-foto { aspect-ratio:3/4; border-radius:var(--radio-m); }
-.foto-area figcaption { color:var(--tinta-suave); font-size:.98rem; line-height:1.65; margin:0; }
-.foto-area figcaption strong { color:var(--area-700); display:block; margin-bottom:6px; font-family:'Poppins',sans-serif; }
+.foto-area figcaption { color:var(--tinta-suave); font-size:1.05rem; line-height:1.7; margin:0; }
+.foto-area figcaption strong { color:var(--area-700); display:block; margin-bottom:8px; font-size:1.15rem; font-family:'Poppins',sans-serif; }
 @media (max-width:720px) {
   .foto-area { grid-template-columns:1fr; gap:18px; }
   .foto-area .marco-foto.con-foto { max-width:230px; margin:0 auto; }
